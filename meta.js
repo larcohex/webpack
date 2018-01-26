@@ -74,6 +74,16 @@ module.exports = {
       type: 'confirm',
       message: 'Install vue-router?',
     },
+    vuex: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Install vuex?',
+    },
+    stylelint: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Use Stylelint to lint your styles?',
+    },
     lint: {
       when: 'isNotTest',
       type: 'confirm',
@@ -160,6 +170,7 @@ module.exports = {
   filters: {
     '.eslintrc.js': 'lint',
     '.eslintignore': 'lint',
+    '.stylelintrc': 'stylelint',
     'config/test.env.js': 'unit || e2e',
     'build/webpack.test.conf.js': "unit && runner === 'karma'",
     'test/unit/**/*': 'unit',

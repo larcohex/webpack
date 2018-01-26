@@ -1,0 +1,49 @@
+{
+  "processors": ["@mapbox/stylelint-processor-arbitrary-tags"],
+  "extends": [
+    "stylelint-config-suitcss",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": [
+    "stylelint-scss",
+    "stylelint-selector-bem-pattern"
+  ],
+  "rules": {
+    "plugin/selector-bem-pattern": {
+      "preset": "suit",
+      "presetOptions": {
+        "namespace": "test"
+      }
+    },
+    "no-empty-source": null,
+    "order/properties-alphabetical-order": null,
+    "block-opening-brace-space-before": "always-single-line",
+    "block-closing-brace-newline-before": "always-multi-line",
+    "at-rule-no-unknown": [ true, {
+      "ignoreAtRules": [
+        "include",
+        "mixin",
+        "each",
+        "if",
+        "else"
+      ]
+    }],
+    "at-rule-empty-line-before": [ "always", {
+      "except": [
+        "after-same-name",
+        "inside-block"
+      ],
+      "ignore": [
+        "after-comment"
+      ]
+    }],
+    "rule-empty-line-before": [ "always", {
+      "except": [
+        "inside-block"
+      ],
+      "ignore": [
+        "after-comment"
+      ]
+    }]
+  }
+}
