@@ -1,0 +1,35 @@
+// font scale (private)
+// e.g. .main-n4, .main-i1
+// n - normal
+// i - italic
+// 1 - thin
+// 2 - extra light, ultra light
+// 3 - light
+// 4 - normal, book, regular
+// 5 - medium
+// 6 - semi bold, demi bold
+// 7 - bold
+// 8 - extra bold, ultra bold
+// 9 - black, heavy
+// --------------------------------------------------
+$main-font: Helvetica, sans-serif;
+
+@mixin main($weights, $styles)
+{
+  @each $w in $weights
+  {
+    @each $s in $styles
+    {
+      .main-#{$s}#{inspect($w)}
+      {
+        font-weight: #{$w * 100};
+        @if ($s == n) { font-style: normal; }
+        @else if ($s == i) { font-style: italic; }
+      }
+    }
+  }
+}
+
+@include main((1, 2, 3, 4, 5, 6, 7, 8, 9), (i, n));
+
+// font applications (app's fonts go here)
