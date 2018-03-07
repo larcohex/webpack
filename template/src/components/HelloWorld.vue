@@ -84,38 +84,38 @@
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  export default {
+    name: 'HelloWorld',
+    data () {
+      return {
+        msg: 'Welcome to Your Vue.js App'
+      }
     }
-  }
-}
+  };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2
-{
-  font-weight: normal;
-}
+  h1,
+  h2
+  {
+    font-weight: normal;
+  }
 
-ul
-{
-  padding: 0;
-  list-style-type: none;
-}
+  ul
+  {
+    padding: 0;
+    list-style-type: none;
+  }
 
-li
-{
-  display: inline-block;
-  margin: 0 10px;
-}
+  li
+  {
+    display: inline-block;
+    margin: 0 10px;
+  }
 
-a
-{
-  color: #42b983;
-}
+  a
+  {
+    color: #42b983;
+  }
 </style>
