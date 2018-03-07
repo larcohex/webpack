@@ -2,34 +2,24 @@
 
 module.exports = {
   root: true,
+  parser: 'babel-eslint',
   parserOptions: {
-    parser: 'babel-eslint'
+    sourceType: 'module'
   },
   env: {
     browser: true,
   },
   {{#if_eq lintConfig "standard"}}
-  extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
-  ],
+  extends: 'standard',
   {{/if_eq}}
   {{#if_eq lintConfig "airbnb"}}
-  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-  extends: ['plugin:vue/essential', 'airbnb-base'],
+  extends: 'airbnb-base',
   {{/if_eq}}
   {{#if_eq lintConfig "none"}}
-  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-  extends: ['plugin:vue/essential'],
   {{/if_eq}}
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'html'
   ],
   {{#if_eq lintConfig "airbnb"}}
   // check if imports actually resolve
@@ -46,6 +36,7 @@ module.exports = {
     {{#if_eq lintConfig "standard"}}
     // allow async-await
     'generator-star-spacing': 'off',
+    'semi': ['error', 'always'],
     {{/if_eq}}
     {{#if_eq lintConfig "airbnb"}}
     // don't require .vue extension when importing
